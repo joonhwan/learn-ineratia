@@ -1,22 +1,23 @@
 import "./bootstrap";
-import React from "react";
+//import React from "react";
 import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 
 const appName =
-    window.document.getElementsByTagName("title")[0]?.innerText || "NickSoftware";
+    window.document.getElementsByTagName("title")[0]?.innerText || "Zibumakin Software";
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) =>
         resolvePageComponent(
-            `./Pages/${name}.jsx`,
-            import.meta.glob("./Pages/**/*.jsx")
+            `./Pages/${name}.tsx`,
+            import.meta.glob("./Pages/**/*.tsx")
         ),
 
     setup({ el, App, props }) {
         const root = createRoot(el);
+        console.log("rendering on : ", root, App, props)
         root.render(<App {...props} />);
     },
 });

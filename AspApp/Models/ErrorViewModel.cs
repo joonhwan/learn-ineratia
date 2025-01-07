@@ -1,4 +1,4 @@
-namespace HelloInertia.Models;
+namespace AspApp.Models;
 
 public class ErrorViewModel
 {
