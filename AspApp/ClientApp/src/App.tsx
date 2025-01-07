@@ -1,4 +1,4 @@
-import "./bootstrap";
+import "./bootstrap.js";
 //import React from "react";
 import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/react";
@@ -19,7 +19,11 @@ createInertiaApp({
     
     setup({ el, App, props }) {
         const root = createRoot(el);
-        console.log("rendering on : ", root, App, props)
+        console.log("rendering on : ", root);
+        console.log("  -App : ", App);
+        console.log("  -props : ", props);
         root.render(<StrictMode><App {...props} /></StrictMode>);
     },
+}).then(() => {
+    console.log("Inertia App Rendered!");
 });
