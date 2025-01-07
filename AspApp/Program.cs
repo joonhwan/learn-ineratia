@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddInertia(o =>
 {
-    // o.RootView = typeof(AspAppa.Views.Home.Index);
+    o.RootView = "~/Views/App.cshtml";
+    
 });
 builder.Services.AddViteHelper(o =>
 {
@@ -30,7 +31,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseAuthorization();
+//app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

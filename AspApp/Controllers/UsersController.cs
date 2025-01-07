@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspApp.Controllers;
 
-public class HomeController : Controller
+public class UsersController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<UsersController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public UsersController(ILogger<UsersController> logger)
     {
         _logger = logger;
     }
@@ -16,22 +16,10 @@ public class HomeController : Controller
     {
         var data = new
         {
-            Title = "ZibPage",
-            Time = DateTime.Now.ToString("O"),
-            Frameworks = new[]
-            {
-                "React",
-                "Angular",
-                "Vue",
-                "Svelte",
-                "Inertia",
-                "Blazor",
-                "Mantine",
-            }
         };
-        
+        Task.Delay(TimeSpan.FromSeconds(3)).Wait();
         return Task.FromResult(
-            Inertia.Render("Home", data)
+            Inertia.Render("Users", data)
         );
     }
     //

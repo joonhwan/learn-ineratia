@@ -7,4 +7,6 @@ html {
 }
 body {
   min-height: 100dvh;
+  padding: 1.5em;
 }
+
