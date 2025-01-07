@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddInertia(o =>
 {
-    // o.RootView = typeof(HelloInertia.Views.Home.Index);
+    // o.RootView = typeof(AspAppa.Views.Home.Index);
 });
 builder.Services.AddViteHelper(o =>
 {

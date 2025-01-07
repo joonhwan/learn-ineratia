@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloInertia", "HelloInertia\HelloInertia.csproj", "{4DED9847-75FA-4D43-A3EF-4ABC64FEE199}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspApp", "AspApp\AspApp.csproj", "{4DED9847-75FA-4D43-A3EF-4ABC64FEE199}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
