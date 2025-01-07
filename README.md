@@ -1,4 +1,4 @@
-# Learn Inertial 
+# Learn Inertia Js
 
 ## asp core app
 
