@@ -11,7 +11,7 @@ mkdirSync(outDir, { recursive: true });
 export default defineConfig({
   plugins: [
     laravel({
-      input: ["src/App.jsx"],
+      input: ["src/App.tsx"],
       publicDirectory: outDir,
       refresh: true,
     }),
