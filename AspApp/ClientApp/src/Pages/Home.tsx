@@ -8,11 +8,11 @@ export interface HomeProps
 
 export default function Home(model: HomeProps) {
     return (
-        <>
+        <div className="min-h-full">
             <Head title={model.title} />
-            <h1>Home</h1>
+            <h1 className="text-blue-500">Home</h1>
             <p>{model.time}</p>
-        </>
+        </div>
     );
 }
 
