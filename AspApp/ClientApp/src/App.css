@@ -2,11 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --background: #faf9f8; /* Fluent UI 기본 배경색 */
+    --text: #323130; /* Fluent UI 기본 텍스트 색상 */
+    --primary: #0078d4; /* Fluent UI 주요 색상 */
+    --primary-content: #ffffff; /* Fluent UI 주요 색상 컨텐츠 색상 */
+    --secondary: #605e5c; /* Fluent UI 보조 색상 */
+    --accent: #106ebe;
+}
+
+html.dark {
+    --background: #201f1f;
+    --foreground: #ffffff;
+    --primary: #2899f5;
+    --primary-content: #ffffff; /* Fluent UI 주요 색상 컨텐츠 색상 */
+    --secondary: #c8c6c4;
+    --accent: #2899f5;
+}
+
+@layer base {
+   body {
+       @apply bg-background text-foreground;
+   }
+}
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   min-height: 100dvh;
-  padding: 1.5em;
 }
 
+.timecode {
+  font-family: monospace;
+  font-size: 1.2em;
+  margin-top: 500px;
+}

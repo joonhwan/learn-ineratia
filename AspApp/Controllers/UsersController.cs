@@ -12,15 +12,13 @@ public class UsersController : Controller
         _logger = logger;
     }
 
-    public Task<Response> Index()
+    public async Task<Response> Index()
     {
         var data = new
         {
         };
-        Task.Delay(TimeSpan.FromSeconds(3)).Wait();
-        return Task.FromResult(
-            Inertia.Render("Users", data)
-        );
+        await Task.Delay(TimeSpan.FromSeconds(1));
+        return Inertia.Render("Users", data);
     }
     //
     // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
