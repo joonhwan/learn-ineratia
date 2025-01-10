@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspApp", "AspApp\AspApp.csproj", "{4DED9847-75FA-4D43-A3EF-4ABC64FEE199}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp1", "WebApp1\WebApp1.csproj", "{AFECA814-68B6-4EC8-AFF6-00BE1688CDFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InertiaCore", "submodules\InertiaCore\InertiaCore\InertiaCore.csproj", "{130AFA43-85C0-4267-BC0D-D27CAD9EDB97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "submodules", "submodules", "{BB744454-A498-4335-9616-6CCD75F8789A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,16 @@ Global
 		{4DED9847-75FA-4D43-A3EF-4ABC64FEE199}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DED9847-75FA-4D43-A3EF-4ABC64FEE199}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DED9847-75FA-4D43-A3EF-4ABC64FEE199}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFECA814-68B6-4EC8-AFF6-00BE1688CDFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFECA814-68B6-4EC8-AFF6-00BE1688CDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFECA814-68B6-4EC8-AFF6-00BE1688CDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFECA814-68B6-4EC8-AFF6-00BE1688CDFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130AFA43-85C0-4267-BC0D-D27CAD9EDB97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130AFA43-85C0-4267-BC0D-D27CAD9EDB97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130AFA43-85C0-4267-BC0D-D27CAD9EDB97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130AFA43-85C0-4267-BC0D-D27CAD9EDB97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{130AFA43-85C0-4267-BC0D-D27CAD9EDB97} = {BB744454-A498-4335-9616-6CCD75F8789A}
 	EndGlobalSection
 EndGlobal

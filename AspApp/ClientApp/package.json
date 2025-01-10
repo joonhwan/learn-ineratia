@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@inertiajs/core": "^2.0.0",
     "@inertiajs/progress": "^0.2.7",
     "@inertiajs/react": "^2.0.0",
     "clsx": "^2.1.1",

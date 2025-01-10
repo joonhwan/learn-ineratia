@@ -17,7 +17,7 @@ html.dark {
     --primary: #2899f5;
     --primary-content: #ffffff; /* Fluent UI 주요 색상 컨텐츠 색상 */
     --secondary: #c8c6c4;
-    --accent: #2899f5;
+    --accent: #77b8ed;
 }
 
 @layer base {
@@ -32,6 +32,10 @@ html {
 
 body {
   min-height: 100dvh;
+}
+
+#nprogress .bar {
+    background: var(--accent) !important;
 }
 
 .timecode {

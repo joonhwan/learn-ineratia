@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using AspApp.Models;
 using InertiaCore;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,10 +36,4 @@ public class HomeController : Controller
             Inertia.Render("Home", data)
         );
     }
-    //
-    // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    // public IActionResult Error()
-    // {
-    //     return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    // }
 }

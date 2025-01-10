@@ -17,7 +17,7 @@ public class UsersController : Controller
         var data = new
         {
         };
-        await Task.Delay(TimeSpan.FromSeconds(1));
+        await Task.Delay(TimeSpan.FromSeconds(0));
         return Inertia.Render("Users", data);
     }
     //

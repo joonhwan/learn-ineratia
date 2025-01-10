@@ -10,20 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa91b6ca-4190-41ef-a77f-e455c45aa0b2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/components/shared/Layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/components/shared/ThemeContext.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/components/shared/sharedData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HelloInertia/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HelloInertia/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspApp/AspApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/AspApp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/src/Pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/src/Pages/Settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/pages/Settings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/src/Pages/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/pages/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspApp/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/src/components/shared/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/components/shared/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/src/pages/Settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/pages/Settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspApp/ClientApp/src/pages/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/ClientApp/src/pages/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspApp/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +127,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736221487812</updated>
-      <workItem from="1736221490982" duration="19212000" />
+      <workItem from="1736221490982" duration="26328000" />
     </task>
     <servers />
   </component>
@@ -141,18 +138,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/AspApp/ClientApp/src/App.tsx</url>
-          <line>23</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

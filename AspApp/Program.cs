@@ -1,3 +1,5 @@
+using AspApp;
+using InertiaCore;
 using InertiaCore.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +9,6 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddInertia(o =>
 {
     o.RootView = "~/Views/App.cshtml";
-    
 });
 builder.Services.AddViteHelper(o =>
 {
@@ -19,11 +20,33 @@ builder.Services.AddViteHelper(o =>
 var app = builder.Build();
 
 app.UseInertia();
+app.Use((context, next) => {
+    //context.Response.Headers.Append("X-Frame-Options", "SAMEORIGIN");
+    Inertia.Share("auth", new
+    {
+        User = new
+        {
+            Name = "John Doe",
+            Email = "john@example.com",
+        }
+    });
+    return next();
+});
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+// app.UseExceptionHandler("/Error");  
+app.UseMiddleware<InertiaErrorPageMiddleware>();
+
+if (app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    // app.UseStatusCodePages();
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    //app.UseExceptionHandler("/Error");
+    app.UseStatusCodePagesWithReExecute("/Error/{0}");
+    
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }

@@ -7,7 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="AspNetCore.InertiaCore" Version="0.0.9" />
+      <Folder Include="ClientApp\src\components\hooks\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\submodules\InertiaCore\InertiaCore\InertiaCore.csproj" />
     </ItemGroup>
 
 </Project>

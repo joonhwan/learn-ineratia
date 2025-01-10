@@ -12,6 +12,7 @@ public class AuthController : Controller
         var request = HttpContext.Request;
         // read json data from request body
         var data = await request.ReadFromJsonAsync<Dictionary<string, string>>();
+        //throw new Exception("로그아웃 실패");
         
         return Ok(new
         {

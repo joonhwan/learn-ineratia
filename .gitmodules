@@ -1,0 +1,3 @@
+[submodule "submodules/InertiaCore"]
+	path = submodules/InertiaCore
+	url = https://github.com/joonhwan/InertiaCore.git
