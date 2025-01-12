@@ -1,10 +1,12 @@
 using AspApp;
+using AspApp.Services;
 using InertiaCore;
 using InertiaCore.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddJsonPlaceholderService();
 builder.Services.AddControllersWithViews();
 builder.Services.AddInertia(o =>
 {
