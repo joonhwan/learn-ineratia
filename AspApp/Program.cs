@@ -1,12 +1,17 @@
 using AspApp;
-using AspApp.Services;
+using AspApp.Database;
 using InertiaCore;
 using InertiaCore.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddJsonPlaceholderService();
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlite("Data Source=app.db");
+    options.EnableSensitiveDataLogging();
+});
 builder.Services.AddControllersWithViews();
 builder.Services.AddInertia(o =>
 {
@@ -21,6 +26,7 @@ builder.Services.AddViteHelper(o =>
 
 var app = builder.Build();
 
+Seeder.Initialize(app.Services);
 app.UseInertia();
 app.Use((context, next) => {
     //context.Response.Headers.Append("X-Frame-Options", "SAMEORIGIN");
@@ -38,6 +44,7 @@ app.Use((context, next) => {
 // Configure the HTTP request pipeline.
 // app.UseExceptionHandler("/Error");  
 app.UseMiddleware<InertiaErrorPageMiddleware>();
+
 
 if (app.Environment.IsDevelopment())
 {

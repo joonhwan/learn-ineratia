@@ -1,39 +1,56 @@
-using AspApp.Services;
+using System.Linq.Dynamic.Core;
+using AspApp.Database;
+using AspApp.Models;
+using AspApp.Models.Dto;
 using InertiaCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using User = AspApp.Database.User;
 
 namespace AspApp.Controllers;
 
 public class UsersController : Controller
 {
-    private readonly IJsonPlaceholderService _jsonPlaceholderService;
+    private readonly AppDbContext _appDbContext;
     private readonly ILogger<UsersController> _logger;
 
     public UsersController(
-        IJsonPlaceholderService jsonPlaceholderService,
+        AppDbContext appDbContext,
         ILogger<UsersController> logger
     )
     {
-        _jsonPlaceholderService = jsonPlaceholderService;
+        _appDbContext = appDbContext;
         _logger = logger;
     }
 
-    public async Task<Response> Index([FromQuery]PaginationParameters paginationParameters, string? search)
+    public async Task<Response> Index([FromQuery] PaginationParameters paginationParameters, string? search)
     {
-        var users = await _jsonPlaceholderService.QueryUsers(PaginationParameters.All);
-        var data = users?
-            .Items
-            .Where(u => search is null || (u.Name != null && u.Name.Contains(search, StringComparison.CurrentCultureIgnoreCase)))
-            .Skip(int.Max(paginationParameters.PageNumber - 1, 0) * paginationParameters.PageSize)
-            .Take(paginationParameters.PageSize)
-            .Select(u => new { u.Id, u.Name, u.Email })
-            .ToArray();
-        await Task.Delay(TimeSpan.FromSeconds(0));
-        _logger.LogInformation("UsersController.Index : Search: {Search}, Users : {Users}", search, data?.Length);
+        _logger.LogInformation("UsersController.Index : Search: {Search}, Users : {PageNumber}", search, paginationParameters.Page);
+        IQueryable<User> query = _appDbContext.Users
+                .AsNoTracking()
+                .OrderBy(u => u.Id)
+            ;
+        if (search is not null)
+        {
+            query = query
+                .Where(u => EF.Functions.Like(u.Name, $"%{search}%"));
+        }
+        var data = new PaginatedResponse<UserDto>
+        {
+            PageSize = paginationParameters.PageSize,
+            PageNumber = paginationParameters.Page,
+            TotalCount = await query.CountAsync(),
+            Items = query
+                .Skip(int.Max(paginationParameters.Page - 1, 0) * paginationParameters.PageSize)
+                .Take(paginationParameters.PageSize)
+                .Select(u => new UserDto(u.Id, u.Name, u.Email))
+                .ToArray()
+        };
         return Inertia.Render("Users", new
         {
-            Users = data,
-            Search = search,
+            Data = data,
+            Search = search
         });
     }
     //
